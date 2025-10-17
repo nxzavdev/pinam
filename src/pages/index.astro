@@ -1,11 +1,25 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Consultora Ambiental",
+  "url": "https://www.tu-dominio.com",
+  "areaServed": ["Ciudad de México", "Estado de México"]
+};
 ---
-
-<Layout>
-	<Welcome />
+<Layout
+  title="Inicio"
+  description="Trámites ambientales con acompañamiento experto."
+  canonical="https://www.tu-dominio.com/"
+  image="/images/hero.jpg"
+  lang="es"
+  schema={orgSchema}
+>
+  <main>
+		<Hero />
+    <section class="h-full"></section>
+	</main>
 </Layout>

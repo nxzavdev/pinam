@@ -1,22 +1,102 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+/** Props opcionales por página */
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string; // URL absoluta o /relativa
+  canonical?: string; // URL absoluta recomendada
+  lang?: string; // 'es' | 'en' | etc.
+  noindex?: boolean; // para páginas que no quieres indexar
+  schema?: Record<string, any> | Array<Record<string, any>>; // JSON-LD
+}
+
+const {
+  title,
+  description,
+  image,
+  canonical,
+  lang = 'es',
+  noindex = false,
+  schema,
+} = Astro.props as Props;
+
+/** Defaults del sitio (ajusta a tu proyecto) */
+const SITE = {
+  name: 'Consultora Ambiental',
+  domain: 'https://www.pinam.com.mx', // <— cámbialo
+  twitter: '@tuusuario',
+  defaultTitle: 'PINAM -Trámites Ambientales en CDMX y EDOMEX',
+  defaultDescription:
+    'Consultoría especializada en trámites ambientales: licencias, manifestaciones y permisos en CDMX y Estado de México.',
+  defaultImage: '/images/hero.jpg',
+};
+
+const pageTitle = title ? `${title} | ${SITE.name}` : SITE.defaultTitle;
+
+/** Convierte una ruta relativa en absoluta usando SITE.domain */
+function absUrl(u?: string) {
+  if (!u) return undefined;
+  if (u.startsWith('http')) return u;
+  return new URL(u, SITE.domain).toString();
+}
+
+const ogImage = absUrl(image ?? SITE.defaultImage);
+const canon = absUrl(canonical) ?? SITE.domain + Astro.url.pathname;
+
+/** Si pasas un array en schema, lo convertimos a array; si es objeto, lo envolvemos */
+const schemaArray = Array.isArray(schema) ? schema : schema ? [schema] : [];
+---
+
+<!doctype html>
+<html lang={lang} class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <!-- Favicon / icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Título y descripción -->
+    <title>{pageTitle}</title>
+    <meta name="description" content={description ?? SITE.defaultDescription} />
+    <!-- Canonical -->
+    <link rel="canonical" href={canon} />
+    <!-- Robots -->
+    {
+      noindex ? (
+        <meta name="robots" content="noindex, nofollow" />
+      ) : (
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+      )
+    }
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:title" content={pageTitle} />
+    <meta
+      property="og:description"
+      content={description ?? SITE.defaultDescription}
+    />
+    <meta property="og:url" content={canon} />
+    <meta property="og:image" content={ogImage} />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content={SITE.twitter} />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta
+      name="twitter:description"
+      content={description ?? SITE.defaultDescription}
+    />
+    <meta name="twitter:image" content={ogImage} />
+    <!-- Preconnect útil (opcional; comenta si no usas fuentes externas) -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+  </head>
+  <body class="min-h-screen flex flex-col bg-white text-slate-800">
+    <Header />
+		<slot />
+		<Footer />
+  </body>
+</html>
