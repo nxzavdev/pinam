@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 @import 'tailwindcss';
 
 html,
@@ -13,7 +13,40 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-  font-family: 'Montserrat', sans-serif;
+h6,
+a {
+  font-family: 'Sansation', sans-serif;
   font-optical-sizing: auto;
+}
+
+.text-effect {
+  position: relative;
+  background: linear-gradient(
+    to right,
+    #10b981,
+    #bfffea 50%,
+    #ffffff 50%
+  );
+  background-size: 200% 100%;
+  background-position: 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.text-effect.filled {
+  background: linear-gradient(
+    to right,
+    #4bdba1,
+    #10b981 50%,
+    #009a65 50%
+  );
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.text-effect:hover {
+  background-position: 0%;
 }

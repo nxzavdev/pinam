@@ -3,15 +3,16 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 
 const orgSchema = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Consultora Ambiental",
-  "url": "https://www.tu-dominio.com",
-  "areaServed": ["Ciudad de México", "Estado de México"]
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Consultora Ambiental',
+  url: 'https://www.tu-dominio.com',
+  areaServed: ['Ciudad de México', 'Estado de México'],
 };
 ---
+
 <Layout
-  title="Inicio"
+  title="PINAM"
   description="Trámites ambientales con acompañamiento experto."
   canonical="https://www.tu-dominio.com/"
   image="/images/hero.jpg"
@@ -19,7 +20,17 @@ const orgSchema = {
   schema={orgSchema}
 >
   <main>
-		<Hero />
-    <section class="h-full"></section>
-	</main>
+    <Hero />
+    <section class="h-full px-4 lg:px-0">
+      <div class="container mx-auto my-10 p-6 lg:my-20 lg:p-20 shadow-lg rounded-4xl">
+        <h2 class="text-4xl md:text-6xl font-bold text-slate-900 mb-8">
+          ¿Quiénes somos?
+        </h2>
+        <p class="text-xl md:text-2xl text-slate-900 max-w-2xl">
+          Somos una consultoría dedicada a la prestación de servicios de
+          trámites ambientales en la Ciudad y Estado de México.
+        </p>
+      </div>
+    </section>
+  </main>
 </Layout>
