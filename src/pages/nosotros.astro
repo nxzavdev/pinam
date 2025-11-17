@@ -1,0 +1,141 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Somos PINAM',
+  url: 'https://www.pinam.com',
+  areaServed: ['Ciudad de México', 'Estado de México'],
+};
+---
+
+<Layout
+  title="PINAM"
+  description="Trámites ambientales con acompañamiento experto."
+  canonical="https://www.pinam.com/"
+  image="/images/hero.jpg"
+  lang="es"
+  schema={orgSchema}
+>
+  <main class="bg-neutral-100">
+    <!-- Hero Section -->
+    <section class="relative h-[70vh] lg:h-[50vh] w-full overflow-hidden">
+      <!-- Image Background -->
+      <div class="absolute inset-0 w-full h-full">
+        <img
+          src="/media/nosotros-hero.webp"
+          alt="hero poster"
+          class="w-full h-full object-cover object-[40%_50%] lg:object-center"
+        />
+        <div class="absolute inset-0 bg-black/50 lg:bg-black/40"></div>
+      </div>
+
+      <!-- Content -->
+      <div
+        id="main-content"
+        class="relative h-full flex items-center justify-center pt-20"
+      >
+        <div class="container mx-auto px-4 text-center">
+          <h1 class="text-4xl lg:text-6xl font-bold text-white mb-8">
+            ¿Quiénes somos?
+          </h1>
+          <p class="max-w-3xl mx-auto text-xl lg:text-2xl text-white/90 px-2">
+            Somos una consultoría dedicada a la prestación de servicios de
+            trámites ambientales en la Ciudad y Estado de México.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 lg:px-0">
+      <Card class="max-w-7xl mx-auto my-10 p-6 lg:my-20 lg:p-20 shadow-[0_4px_4px_2px_#0002] rounded-4xl">
+        <div class="grid lg:grid-cols-3 gap-10 items-center">
+          <!-- Imagen -->
+          <div class="order-last lg:order-first flex justify-center lg:justify-start">
+            <img
+              src="/media/mision.webp"
+              alt="Consultor ambiental en trabajo de campo"
+              class="rounded-3xl w-full max-w-sm lg:h-full shadow-md"
+            />
+          </div>
+
+          <!-- Texto -->
+          <div class="lg:col-span-2">
+            <h2 class="text-3xl lg:text-5xl font-bold text-slate-900 mb-8">
+              Nuestra misión
+            </h2>
+            <p class="text-lg lg:text-2xl text-slate-900">
+              Brindar servicios de consultoría ambiental de calidad, ofreciendo asesoría por
+              <b>personal calificado</b> y soluciones innovadoras que ayuden a las empresas a cumplir
+              con las regulaciones vigentes, protegiendo el medio ambiente y promoviendo el
+              <b>desarrollo sostenible</b>, siempre priorizando la <b>satisfacción del cliente</b> y el
+              cumplimiento en tiempo y forma.
+            </p>
+          </div>
+        </div>
+      </Card>
+    </section>
+
+    <section class="px-4 lg:px-0">
+      <Card class="max-w-7xl mx-auto my-10 p-6 lg:my-20 lg:p-20 shadow-[0_4px_4px_2px_#0002] rounded-4xl">
+        <div class="grid lg:grid-cols-3 gap-10 items-center">
+          <!-- Texto -->
+          <div class="lg:col-span-2">
+            <h2 class="text-3xl lg:text-5xl font-bold text-slate-900 mb-8">
+              Nuestra visión
+            </h2>
+            <p class="text-lg lg:text-2xl text-slate-900 max-w-2xl">
+              Ser la consultoría ambiental líder en México, reconocida por su excelencia en la
+              prestación de servicios, su capacidad para innovar y adaptarse a las necesidades
+              de los clientes, siempre comprometida con la sostenibilidad y la responsabilidad
+              ambiental.
+            </p>
+          </div>
+
+          <!-- Imagen -->
+          <div class="flex justify-center lg:justify-end">
+            <img
+              src="/media/vision.webp"
+              alt="Vista panorámica de ecosistema natural representando visión ambiental"
+              class="rounded-3xl w-full max-w-sm lg:h-auto shadow-md"
+            />
+          </div>
+        </div>
+      </Card>
+    </section>
+    <section class="px-4 lg:px-0">
+      <Card class="max-w-7xl mx-auto my-10 p-6 lg:my-20 lg:p-20 shadow-[0_4px_4px_2px_#0002] rounded-4xl">
+        <div class="grid lg:grid-cols-3 gap-10 items-center">
+          
+          <!-- Imagen -->
+          <div class="order-last lg:order-first flex justify-center lg:justify-start">
+            <img
+              src="/images/valores.jpg"
+              alt="Manos unidas representando colaboración y valores"
+              class="rounded-3xl object-cover w-full max-w-sm h-80 lg:h-auto shadow-md"
+            />
+          </div>
+
+          <!-- Texto -->
+          <div class="lg:col-span-2">
+            <h2 class="text-3xl lg:text-5xl font-bold text-slate-900 mb-8">
+              Nuestros valores
+            </h2>
+
+            <ul class="text-lg lg:text-2xl text-slate-900 space-y-4 max-w-2xl">
+              <li><span class="font-semibold">Transparencia:</span> Proporcionamos información clara y precisa en cada etapa del servicio.</li>
+              <li><span class="font-semibold">Respeto:</span> Valoramos la diversidad cultural, empresarial y ambiental de quienes trabajan con nosotros.</li>
+              <li><span class="font-semibold">Responsabilidad:</span> Actuamos con ética y considerando el impacto ambiental y social.</li>
+              <li><span class="font-semibold">Sostenibilidad:</span> Promovemos soluciones que equilibren el desarrollo económico, social y ambiental.</li>
+              <li><span class="font-semibold">Integridad:</span> Mantenemos relaciones basadas en honestidad, confidencialidad y objetividad.</li>
+              <li><span class="font-semibold">Innovación:</span> Fomentamos la creatividad en la búsqueda de soluciones ambientales efectivas.</li>
+              <li><span class="font-semibold">Colaboración:</span> Trabajamos en conjunto con clientes y autoridades para responder a cada necesidad.</li>
+              <li><span class="font-semibold">Mejora continua:</span> Evolucionamos constantemente nuestros procesos y capacidades.</li>
+            </ul>
+          </div>
+        </div>
+      </Card>
+    </section>
+  </main>
+</Layout>

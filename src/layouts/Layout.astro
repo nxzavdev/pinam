@@ -1,7 +1,8 @@
 ---
 import '../styles/global.css';
-import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import MobileMenu from '../components/MobileMenu.astro';
+import Header from '../components/Header.astro';
 
 /** Props opcionales por página */
 interface Props {
@@ -95,6 +96,7 @@ const schemaArray = Array.isArray(schema) ? schema : schema ? [schema] : [];
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
   </head>
   <body class="min-h-screen flex flex-col bg-white text-slate-800">
+    <MobileMenu />
     <Header />
 		<slot />
 		<Footer />

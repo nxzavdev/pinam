@@ -1,29 +1,11 @@
----
-// You can replace this with your actual video path
-const videoSource = '/media/hero-bg.mp4';
----
-
-<section class="relative h-[100dvh] w-full overflow-hidden">
+<section class="relative h-screen w-full overflow-hidden">
   <!-- Video Background -->
   <div class="absolute inset-0 w-full h-full">
     <img
       src="/media/hero-poster.webp"
       alt="hero poster"
-      class="w-full h-full object-cover object-[82%_50%] md:object-center"
+      class="w-full h-full object-cover object-[82%_50%] lg:object-center"
     />
-    <!-- <video
-      poster="/media/hero-poster.webp"
-      preload="auto"
-      autoplay
-      muted
-      loop
-      playsinline
-      class="w-full h-full object-cover object-[75%_50%] md:object-center"
-    >
-      <source src={videoSource} type="video/mp4" />
-      Tu navegador no soporta la reproducción de video.
-    </video> -->
-    <!-- Overlay for better text readability -->
     <div class="absolute inset-0 bg-black/35 lg:bg-black/20"></div>
   </div>
 
@@ -33,10 +15,14 @@ const videoSource = '/media/hero-bg.mp4';
     class="relative h-full flex items-center justify-center"
   >
     <div class="container mx-auto px-4 pb-16 md:pb-24 text-center">
-      <h1 class="text-[5.5rem] lg:text-[8rem] font-bold text-white mb-4">
-        <span class="text-effect font-light text-transparent bg-clip-text bg-gradient-to-b from-white to-white">PIYALI</span>
+      <h1 class="text-[6rem] lg:text-[8rem] font-bold text-white">
+        <span
+          class="text-effect font-light text-transparent bg-clip-text bg-gradient-to-b from-white to-white"
+          >PIYALI
+        </span>
       </h1>
-      <p class="max-w-3xl mx-auto text-2xl md:text-3xl text-white/90">
+      <h2 class="text-white text-xl mb-8 -mt-6">Integración Ambiental</h2>
+      <p class="max-w-3xl mx-auto text-xl lg:text-2xl text-white/90 px-2">
         Servicios de consultoría ambiental de alta calidad al mejor costo en la
         Ciudad de México y Estado de México.
       </p>

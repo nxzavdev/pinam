@@ -1,41 +1,61 @@
-<header id="header-container" class="fixed top-0 px-2 z-50 w-full border-b-2 border-neutral-200/20 bg-transparent backdrop-blur-xs shadow-md transition-all duration-500">
+<header id="header-container" class="fixed top-0 px-2 z-10 w-full border-b-2 border-neutral-200/20 bg-transparent backdrop-blur-xs shadow-md transition-all duration-500">
   <div class="container mx-auto w-full px-2 py-2 lg:px-4 lg:py-6">
-    <div class="grid grid-cols-[1fr_2fr_1fr] items-center">
-      <!-- Logo - left aligned -->
-      <div class="flex-shrink-0">
-        <a href="/" class="text-effect text-xl lg:text-3xl header-text">
-          PIYALI
+    <div class="grid grid-cols-3 items-center">
+      <!-- Empty div for grid spacing -->
+      <div class="md:hidden"></div>
+      
+      <!-- Logo - centered on mobile, left aligned on desktop -->
+      <div class="flex justify-center md:justify-start lg:py-0">
+        <a href="/" class="text-effect text-[1.5rem] lg:text-3xl header-text">
+          PINAM
         </a>
       </div>
       <!-- Navigation - centered -->
       <nav class="hidden md:flex justify-center">
         <ul class="flex space-x-8">
           <li class="relative group">
-            <a href="/" class="text-white hover:text-green-600 transition-all duration-300 header-text relative group-hover:scale-105">
+            <a href="/" class="text-white hover:text-emerald-400 transition-all duration-300 header-text relative group-hover:scale-105">
               Inicio
-              <span class="absolute bottom-[-4px] left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
+              <span class="absolute bottom-[-4px] left-0 w-0 h-0.5 bg-emerald-600 transition-all duration-300 group-hover:w-full"></span>
             </a>
           </li>
           <li class="relative group">
-            <a href="/nosotros" class="text-white hover:text-green-600 transition-all duration-300 header-text relative group-hover:scale-105">
+            <a href="/nosotros" class="text-white hover:text-emerald-400 transition-all duration-300 header-text relative group-hover:scale-105">
               ¿Quiénes Somos?
-              <span class="absolute bottom-[-4px] left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
+              <span class="absolute bottom-[-4px] left-0 w-0 h-0.5 bg-emerald-600 transition-all duration-300 group-hover:w-full"></span>
             </a>
           </li>
           <li class="relative group">
-            <a href="/servicios" class="text-white hover:text-green-600 transition-all duration-300 header-text relative group-hover:scale-105">
+            <a href="/#servicios" class="text-white hover:text-emerald-400 transition-all duration-300 header-text relative group-hover:scale-105">
               Servicios
-              <span class="absolute bottom-[-4px] left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
+              <span class="absolute bottom-[-4px] left-0 w-0 h-0.5 bg-emerald-600 transition-all duration-300 group-hover:w-full"></span>
             </a>
           </li>
         </ul>
       </nav>
 
-      <!-- Contact Button - right aligned -->
-      <div class="flex justify-end">
-        <a href="/contacto" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full transition-colors">
-          Contáctanos
-        </a>
+      <!-- Right side - hamburger on mobile, contact button on desktop -->
+      <div class="flex justify-end items-center">
+        <!-- Hamburger button - visible on mobile -->
+        <button 
+          id="mobile-menu-button"
+          class="md:hidden hover:text-emerald-400 focus:outline-none" 
+          aria-label="Menú"
+          aria-expanded="false"
+        >
+          <svg class="w-8 h-8" fill="currentColor" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+        
+        <!-- Contact Button - hidden on mobile, visible on desktop -->
+        <div class="hidden md:block">
+          <a href="/contacto" aria-label="Contáctanos">
+            <div class="bg-emerald-600 text-white px-6 py-3 inline-block rounded-full hover:bg-emerald-700 transition-all duration-300">
+              Contáctanos
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -45,19 +65,24 @@
   document.addEventListener('DOMContentLoaded', () => {
     const header = document.getElementById('header-container');
     const headerTexts = document.querySelectorAll('.header-text');
+    const headerButton = document.getElementById('mobile-menu-button');
     const heroHeight = window.innerHeight;
 
     const updateHeader = () => {
-      if (window.scrollY > heroHeight * 0.6) {
+      if (window.scrollY > heroHeight * 0.4) {
         header.classList.add('bg-white');
         header.classList.remove('bg-transparent');
         headerTexts.forEach(el => el.classList.add('text-slate-800', 'filled'));
         headerTexts.forEach(el => el.classList.remove('text-white'));
+        headerButton.classList.remove('text-white');
+        headerButton.classList.add('text-slate-400');
       } else {
         header.classList.remove('bg-white');
         header.classList.add('bg-transparent');
         headerTexts.forEach(el => el.classList.remove('text-slate-800', 'filled'));
         headerTexts.forEach(el => el.classList.add('text-white'));
+        headerButton.classList.remove('text-slate-400');
+        headerButton.classList.add('text-white');
       }
     };
     

@@ -1,12 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
-
+import Card from '../components/Card.astro';
 const orgSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
   name: 'Consultora Ambiental',
-  url: 'https://www.tu-dominio.com',
+  url: 'https://www.pinam.com.mx',
   areaServed: ['Ciudad de México', 'Estado de México'],
 };
 ---
@@ -14,23 +14,161 @@ const orgSchema = {
 <Layout
   title="PINAM"
   description="Trámites ambientales con acompañamiento experto."
-  canonical="https://www.tu-dominio.com/"
+  canonical="https://www.pinam.com.mx/"
   image="/images/hero.jpg"
   lang="es"
   schema={orgSchema}
 >
-  <main>
+  <main class="bg-neutral-100">
     <Hero />
-    <section class="h-full px-4 lg:px-0">
-      <div class="container mx-auto my-10 p-6 lg:my-20 lg:p-20 shadow-lg rounded-4xl">
-        <h2 class="text-4xl md:text-6xl font-bold text-slate-900 mb-8">
-          ¿Quiénes somos?
-        </h2>
-        <p class="text-xl md:text-2xl text-slate-900 max-w-2xl">
-          Somos una consultoría dedicada a la prestación de servicios de
-          trámites ambientales en la Ciudad y Estado de México.
-        </p>
+    <section class="px-4 lg:px-0 pt-6">
+      <Card>
+        <div class="grid lg:grid-cols-3 gap-10 items-center">
+          <!-- Texto -->
+          <div class="lg:col-span-2">
+            <h2 class="text-3xl lg:text-5xl font-bold text-slate-900 mb-8">
+              ¿Quiénes somos?
+            </h2>
+            <p class="text-lg lg:text-2xl text-slate-900 mb-6">
+              Somos una consultoría dedicada a la prestación de servicios de
+              trámites ambientales en la Ciudad y Estado de México.
+            </p>
+
+            <a href="/nosotros" aria-label="Conoce más aquí">
+              <div class="bg-emerald-600 text-white px-6 py-3 inline-block rounded-full hover:bg-emerald-700 transition-all duration-300">
+                Conoce más
+              </div>
+            </a>
+          </div>
+
+          <!-- Imagen -->
+          <div class="flex justify-center lg:justify-end">
+            <img
+              src="/media/quienes-somos.webp"
+              alt="Equipo de consultores ambientales"
+              class="rounded-3xl w-full max-w-sm lg:h-full shadow-md"
+            />
+          </div>
+        </div>
+      </Card>
+    </section>
+    <section id="servicios" class="px-4 lg:px-0 scroll-mt-36">
+      <Card>
+        <div class="grid lg:grid-cols-3 gap-10 items-center">
+          <!-- Texto -->
+          <div class="lg:col-span-2">
+            <h2 class="text-3xl lg:text-5xl font-bold text-slate-900 mb-8">
+              Nuestros servicios
+            </h2>
+            <p class="text-lg lg:text-2xl text-slate-900 max-w-2xl mb-6">
+              Brindamos acompañamiento integral en la <b>gestión de trámites ambientales</b> a nivel
+              federal, estatal, municipal y en la Ciudad de México. Nuestro enfoque se basa en
+              el cumplimiento normativo, la claridad en los procesos y la atención personalizada
+              para cada cliente, asegurando soluciones eficientes y alineadas con las
+              regulaciones vigentes.
+            </p>
+            <a href="/contacto" aria-label="Agenda una sesión informativa">
+              <div class="bg-emerald-600 text-white px-6 py-3 inline-block rounded-full hover:bg-emerald-700 transition-all duration-300">
+                Agenda una sesión informativa
+              </div>
+            </a>
+          </div>
+          <!-- Imagen -->
+          <div class="flex justify-center lg:justify-end">
+            <img
+              src="/media/servicios.webp"
+              alt="Documentos y análisis ambiental representando servicios"
+              class="rounded-3xl object-cover w-full max-w-sm h-80 lg:h-auto shadow-md"
+            />
+          </div>
+
+        </div>
+      </Card>
+    </section>
+
+    <section id="servicios-lista" class="px-4 lg:px-0">
+        <article class="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-4 max-w-7xl mx-auto my-10 px-6 py-10 lg:p-20 shadow-[0_4px_4px_2px_#0002] rounded-2xl lg:rounded-4xl">
+          <div>
+            <h3 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
+              Trámites federales
+            </h3>
+            <p class="text-base lg:text-lg text-slate-800 mb-4">
+              Gestión y regularización ante la Secretaría de Medio Ambiente y Recursos Naturales <b>(SEMARNAT)</b>,
+              con enfoque en el <b>manejo adecuado de residuos peligrosos</b> y obligaciones federales.
+            </p>
+            <ul class="text-sm font-bold lg:text-base text-slate-800 space-y-2 list-disc pl-5 mb-8 lg:mb-0">
+              <li>Registro como generador de Residuos Peligrosos.</li>
+              <li>Modificaciones a registros y autorizaciones en materia de Residuos Peligrosos.</li>
+              <li>Autorización para el manejo de Residuos Peligrosos.</li>
+              <li>Altas de transportistas.</li>
+              <li>Aviso de cierre de instalaciones.</li>
+              <li>COA (Cédula de Operación Anual).</li>
+              <li>Asesoría en gestiones ambientales e inspecciones por PROFEPA.</li>
+            </ul>
+          </div>
+          <div class="flex justify-center lg:justify-end items-center">
+            <img src="/media/semarnat.webp" alt="Logo de SEMARNAT" class="max-w-[250px] lg:max-w-full h-auto">
+          </div>
+        </article>
+
+        <article class="grid grid-cols-1 lg:grid-cols-[3fr_2fr] max-w-7xl mx-auto my-10 px-6 py-10 lg:p-20 shadow-[0_4px_4px_2px_#0002] rounded-2xl lg:rounded-4xl">
+          <div>
+            <h3 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
+              Trámites estatales
+            </h3>
+            <p class="text-base lg:text-lg text-slate-800 mb-4">
+              Apoyo en el cumplimiento de obligaciones ambientales a nivel estatal, con foco en
+            residuos de manejo especial y operación integral de los centros de trabajo.
+          </p>
+          <ul class="text-sm font-bold lg:text-base text-slate-800 space-y-2 list-disc pl-5">
+            <li>Registro como generador de Residuos de Manejo Especial (RME).</li>
+            <li>COI (Cédula de Operación Integral).</li>
+            <li>
+              Autorización como recolector de Residuos Sólidos Urbanos (RSU) y Residuos de Manejo
+              Especial (RME).
+            </li>
+          </ul>
+        </article>
+
+        <article class="grid grid-cols-1 lg:grid-cols-[3fr_2fr] max-w-7xl mx-auto my-10 px-6 py-10 lg:p-20 shadow-[0_4px_4px_2px_#0002] rounded-2xl lg:rounded-4xl">
+          <div>
+            <h3 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
+              Trámites municipales
+            </h3>
+            <p class="text-base lg:text-lg text-slate-800 mb-4">
+              Gestión de permisos y autorizaciones ambientales ante autoridades municipales,
+            asegurando el cumplimiento de los requisitos locales.
+          </p>
+          <ul class="text-sm font-bold lg:text-base text-slate-800 space-y-2 list-disc pl-5">
+            <li>Visto Bueno Ambiental o Cédula Ambiental.</li>
+            <li>Permiso de descarga de aguas residuales.</li>
+            <li>Permisos relacionados con Residuos Sólidos Urbanos (RSU).</li>
+          </ul>
+        </article>
+
+        <article class="grid grid-cols-1 lg:grid-cols-[3fr_2fr] max-w-7xl mx-auto my-10 px-6 py-10 lg:p-20 shadow-[0_4px_4px_2px_#0002] rounded-2xl lg:rounded-4xl">
+          <div>
+            <h3 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
+              Trámites ambientales en CDMX
+            </h3>
+            <p class="text-base lg:text-lg text-slate-800 mb-4">
+              Acompañamiento especializado en trámites ambientales para la Ciudad de México,
+            alineados con la normatividad local y las autoridades competentes.
+          </p>
+          <ul class="text-sm font-bold lg:text-base text-slate-800 space-y-2 list-disc pl-5">
+            <li>MAU (Manifestación Ambiental Única).</li>
+            <li>IDA (Informe de Desempeño Ambiental).</li>
+            <li>Trámites y seguimiento de RAMIR (manejo integral de residuos).</li>
+            <li>Planes de manejo sujetos y no sujetos a MAU.</li>
+            <li>Dictaminación de árboles.</li>
+          </ul>
+        </article>
       </div>
+    </section>
+    <section id="contacto">
+      <!-- <Card>
+        
+      </Card> -->
     </section>
   </main>
 </Layout>
