@@ -18,9 +18,9 @@ const orgSchema = {
   lang="es"
   schema={orgSchema}
 >
-  <main class="bg-neutral-100">
+  <main>
     <!-- Hero Section -->
-    <section class="relative h-[70vh] lg:h-[50vh] w-full overflow-hidden">
+    <section class="relative min-h-[480px] h-[50vh] lg:h-[50vh] w-full overflow-hidden">
       <!-- Image Background -->
       <div class="absolute inset-0 w-full h-full">
         <img
@@ -41,7 +41,7 @@ const orgSchema = {
             ¿Quiénes somos?
           </h1>
           <p class="max-w-3xl mx-auto text-xl lg:text-2xl text-white/90 px-2">
-            Somos una consultoría dedicada a la prestación de servicios de
+            Somos PIYALI Integración Ambiental, una consultoría dedicada a la prestación de servicios de
             trámites ambientales en la Ciudad y Estado de México.
           </p>
         </div>
@@ -49,48 +49,40 @@ const orgSchema = {
     </section>
 
     <section class="px-4 lg:px-0">
-      <Card class="max-w-7xl mx-auto my-10 p-6 lg:my-20 lg:p-20 shadow-[0_4px_4px_2px_#0002] rounded-4xl">
-        <div class="grid lg:grid-cols-3 gap-10 items-center">
-          <!-- Imagen -->
-          <div class="order-last lg:order-first flex justify-center lg:justify-start">
-            <img
-              src="/media/mision.webp"
-              alt="Consultor ambiental en trabajo de campo"
-              class="rounded-3xl w-full max-w-sm lg:h-full shadow-md"
-            />
-          </div>
-
-          <!-- Texto -->
-          <div class="lg:col-span-2">
-            <h2 class="text-3xl lg:text-5xl font-bold text-slate-900 mb-8">
-              Nuestra misión
-            </h2>
-            <p class="text-lg lg:text-2xl text-slate-900">
-              Brindar servicios de consultoría ambiental de calidad, ofreciendo asesoría por
-              <b>personal calificado</b> y soluciones innovadoras que ayuden a las empresas a cumplir
-              con las regulaciones vigentes, protegiendo el medio ambiente y promoviendo el
-              <b>desarrollo sostenible</b>, siempre priorizando la <b>satisfacción del cliente</b> y el
-              cumplimiento en tiempo y forma.
-            </p>
-          </div>
+      <Card>
+        <div class="lg:col-span-2">
+          <h2 class="text-3xl lg:text-5xl font-bold text-slate-900 mb-6">
+            Nuestra misión
+          </h2>
+          <p class="text-lg lg:text-2xl text-slate-900">
+            Brindar servicios de consultoría ambiental de calidad, ofreciendo asesoría por
+            <b>personal calificado</b> y soluciones innovadoras que ayuden a las empresas a cumplir
+            con las regulaciones vigentes, protegiendo el medio ambiente y promoviendo el
+            <b>desarrollo sostenible</b>, siempre priorizando la <b>satisfacción del cliente</b> y el
+            cumplimiento en tiempo y forma.
+          </p>
         </div>
       </Card>
     </section>
 
     <section class="px-4 lg:px-0">
-      <Card class="max-w-7xl mx-auto my-10 p-6 lg:my-20 lg:p-20 shadow-[0_4px_4px_2px_#0002] rounded-4xl">
-        <div class="grid lg:grid-cols-3 gap-10 items-center">
+      <Card>
+        <div class="grid lg:grid-cols-3 items-center">
           <!-- Texto -->
           <div class="lg:col-span-2">
-            <h2 class="text-3xl lg:text-5xl font-bold text-slate-900 mb-8">
+            <h2 class="text-3xl lg:text-5xl font-bold text-slate-900 mb-6">
               Nuestra visión
             </h2>
-            <p class="text-lg lg:text-2xl text-slate-900 max-w-2xl">
+            <p class="text-lg lg:text-2xl text-slate-900 mb-6 lg:pr-12">
               Ser la consultoría ambiental líder en México, reconocida por su excelencia en la
-              prestación de servicios, su capacidad para innovar y adaptarse a las necesidades
-              de los clientes, siempre comprometida con la sostenibilidad y la responsabilidad
-              ambiental.
+              prestación de servicios, su capacidad para <b>innovar</b> y adaptarse a las necesidades
+              de los clientes, siempre comprometida con la <b>sostenibilidad</b> y la
+              <b>responsabilidad ambiental</b>.
             </p>
+
+            <div class="block text-center lg:text-left w-fit bg-emerald-600 hover:bg-emerald-500 text-white shadow px-6 py-2 lg:py-3 rounded-full mb-6">
+              <a href="/contacto">¡Contáctanos y descubre cómo podemos ayudarte!</a>
+            </div>
           </div>
 
           <!-- Imagen -->
@@ -98,41 +90,56 @@ const orgSchema = {
             <img
               src="/media/vision.webp"
               alt="Vista panorámica de ecosistema natural representando visión ambiental"
-              class="rounded-3xl w-full max-w-sm lg:h-auto shadow-md"
+              class="rounded-xl w-full max-w-sm object-cover h-auto lg:aspect-square"
             />
           </div>
         </div>
       </Card>
     </section>
     <section class="px-4 lg:px-0">
-      <Card class="max-w-7xl mx-auto my-10 p-6 lg:my-20 lg:p-20 shadow-[0_4px_4px_2px_#0002] rounded-4xl">
-        <div class="grid lg:grid-cols-3 gap-10 items-center">
-          
-          <!-- Imagen -->
-          <div class="order-last lg:order-first flex justify-center lg:justify-start">
-            <img
-              src="/images/valores.jpg"
-              alt="Manos unidas representando colaboración y valores"
-              class="rounded-3xl object-cover w-full max-w-sm h-80 lg:h-auto shadow-md"
-            />
-          </div>
-
-          <!-- Texto -->
+      <Card>
+        <div class="w-full max-w-7xl">
           <div class="lg:col-span-2">
-            <h2 class="text-3xl lg:text-5xl font-bold text-slate-900 mb-8">
+            <h2 class="text-center text-3xl lg:text-5xl font-bold text-slate-900 mb-8">
               Nuestros valores
             </h2>
-
-            <ul class="text-lg lg:text-2xl text-slate-900 space-y-4 max-w-2xl">
-              <li><span class="font-semibold">Transparencia:</span> Proporcionamos información clara y precisa en cada etapa del servicio.</li>
-              <li><span class="font-semibold">Respeto:</span> Valoramos la diversidad cultural, empresarial y ambiental de quienes trabajan con nosotros.</li>
-              <li><span class="font-semibold">Responsabilidad:</span> Actuamos con ética y considerando el impacto ambiental y social.</li>
-              <li><span class="font-semibold">Sostenibilidad:</span> Promovemos soluciones que equilibren el desarrollo económico, social y ambiental.</li>
-              <li><span class="font-semibold">Integridad:</span> Mantenemos relaciones basadas en honestidad, confidencialidad y objetividad.</li>
-              <li><span class="font-semibold">Innovación:</span> Fomentamos la creatividad en la búsqueda de soluciones ambientales efectivas.</li>
-              <li><span class="font-semibold">Colaboración:</span> Trabajamos en conjunto con clientes y autoridades para responder a cada necesidad.</li>
-              <li><span class="font-semibold">Mejora continua:</span> Evolucionamos constantemente nuestros procesos y capacidades.</li>
-            </ul>
+  
+            <div>
+              <ul class="text-md lg:text-xl text-center text-white">
+                <li class="bg-emerald-600 shadow px-6 lg:px-10 py-4 rounded-xl lg:rounded-full mb-6">
+                  <span class="font-bold">Transparencia:</span>
+                  <br> Proporcionamos información clara y precisa en cada etapa del servicio.
+                </li>
+                <li class="bg-emerald-600 shadow px-6 lg:px-10 py-4 rounded-xl lg:rounded-full mb-6">
+                  <span class="font-bold">Respeto:</span>
+                  <br> Valoramos la diversidad cultural, empresarial y ambiental de quienes trabajan con nosotros.
+                </li>
+                <li class="bg-emerald-600 shadow px-6 lg:px-10 py-4 rounded-xl lg:rounded-full mb-6">
+                  <span class="font-bold">Responsabilidad:</span>
+                  <br> Actuamos con ética y considerando el impacto ambiental y social.
+                </li>
+                <li class="bg-emerald-600 shadow px-6 lg:px-10 py-4 rounded-xl lg:rounded-full mb-6">
+                  <span class="font-bold">Sostenibilidad:</span>
+                  <br> Promovemos soluciones que equilibren el desarrollo económico, social y ambiental.
+                </li>
+                <li class="bg-emerald-600 shadow px-6 lg:px-10 py-4 rounded-xl lg:rounded-full mb-6">
+                  <span class="font-bold">Integridad:</span>
+                  <br> Mantenemos relaciones basadas en honestidad, confidencialidad y objetividad.
+                </li>
+                <li class="bg-emerald-600 shadow px-6 lg:px-10 py-4 rounded-xl lg:rounded-full mb-6">
+                  <span class="font-bold">Innovación:</span>
+                  <br> Fomentamos la creatividad en la búsqueda de soluciones ambientales efectivas.
+                </li>
+                <li class="bg-emerald-600 shadow px-6 lg:px-10 py-4 rounded-xl lg:rounded-full mb-6">
+                  <span class="font-bold">Colaboración:</span>
+                  <br> Trabajamos en conjunto con clientes y autoridades para responder a cada necesidad.
+                </li>
+                <li class="bg-emerald-600 shadow px-6 lg:px-10 py-4 rounded-xl lg:rounded-full mb-6">
+                  <span class="font-bold">Mejora continua:</span>
+                  <br> Evolucionamos constantemente nuestros procesos y capacidades.
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </Card>

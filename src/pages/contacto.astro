@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout
+  title="Contacto"
+  description="Contáctanos para obtener más información sobre nuestros servicios."
+  canonical="https://www.pinam.com/contacto"
+  image="/images/hero.jpg"
+  lang="es"
+>
+  <main class="grow">
+    <section
+      class="relative min-h-[480px] h-[50vh] lg:h-[50vh] w-full overflow-hidden mb-6 lg:mb-10"
+    >
+      <!-- Image Background -->
+      <div class="absolute inset-0 w-full h-full">
+        <img
+          src="/media/contacto-hero.webp"
+          alt="hero poster"
+          class="w-full h-full object-cover object-[50%_50%] lg:object-center"
+        />
+        <div class="absolute inset-0 bg-black/50 lg:bg-black/40"></div>
+      </div>
+
+      <!-- Content -->
+      <div
+        id="main-content"
+        class="relative h-full flex items-center justify-center pt-20"
+      >
+        <div class="container mx-auto px-4 text-center">
+          <h1 class="text-4xl lg:text-6xl font-bold text-white mb-8">
+            Contáctanos
+          </h1>
+          <p class="max-w-3xl mx-auto text-xl lg:text-2xl text-white/90 px-2">
+            Estamos listos para ayudarte con cualquier trámite ambiental a nivel
+            federal, estatal, municipal y en la Ciudad de México. Escríbenos y
+            uno de nuestros consultores te dará seguimiento personalizado.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="px-4 lg:px-0">
+      <div class="max-w-3xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-6 lg:gap-10 p-6 lg:p-10 rounded-2xl lg:rounded-4xl shadow-[0_2px_16px_4px_#0002]">
+        <div class="flex justify-center items-center text-emerald-700">
+          <img src="/media/contacto.svg" alt="Icono de contacto" class="w-24 h-24 lg:w-full lg:h-auto">
+        </div>
+        <div class="flex flex-col text-center lg:text-left justify-center space-y-4 text-md lg:text-xl text-slate-900">
+          <p>
+            <span class="font-semibold">Correo principal:</span><br />
+            <a
+              href="mailto:pinamintegracionambiental@gmail.com"
+              class="text-emerald-600 hover:text-emerald-500 hover:underline"
+            >
+              pinamintegracionambiental@gmail.com
+            </a>
+          </p>
+          <p>
+            <span class="font-semibold">Correo alterno:</span><br />
+            <a
+              href="mailto:lrobles.pinam@gmail.com"
+              class="text-emerald-600 hover:text-emerald-500 hover:underline"
+            >
+              lrobles.pinam@gmail.com
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

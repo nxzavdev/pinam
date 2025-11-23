@@ -51,3 +51,9 @@ a {
 .text-effect:hover {
   background-position: 0%;
 }
+
+@layer theme {
+  body {
+    @apply bg-neutral-100;
+  }
+}

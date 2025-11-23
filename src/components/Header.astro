@@ -1,6 +1,6 @@
 <header id="header-container" class="fixed top-0 px-2 z-10 w-full border-b-2 border-neutral-200/20 bg-transparent backdrop-blur-xs shadow-md transition-all duration-500">
   <div class="container mx-auto w-full px-2 py-2 lg:px-4 lg:py-6">
-    <div class="grid grid-cols-3 items-center">
+    <div class="grid grid-cols-[1fr_3fr_1fr] items-center">
       <!-- Empty div for grid spacing -->
       <div class="md:hidden"></div>
       
@@ -12,7 +12,7 @@
       </div>
       <!-- Navigation - centered -->
       <nav class="hidden md:flex justify-center">
-        <ul class="flex space-x-8">
+        <ul class="grid grid-cols-3 space-x-4 text-center">
           <li class="relative group">
             <a href="/" class="text-white hover:text-emerald-400 transition-all duration-300 header-text relative group-hover:scale-105">
               Inicio
@@ -21,7 +21,7 @@
           </li>
           <li class="relative group">
             <a href="/nosotros" class="text-white hover:text-emerald-400 transition-all duration-300 header-text relative group-hover:scale-105">
-              ¿Quiénes Somos?
+              Sobre nosotros
               <span class="absolute bottom-[-4px] left-0 w-0 h-0.5 bg-emerald-600 transition-all duration-300 group-hover:w-full"></span>
             </a>
           </li>
@@ -75,13 +75,13 @@
         headerTexts.forEach(el => el.classList.add('text-slate-800', 'filled'));
         headerTexts.forEach(el => el.classList.remove('text-white'));
         headerButton.classList.remove('text-white');
-        headerButton.classList.add('text-slate-400');
+        headerButton.classList.add('text-emerald-600');
       } else {
         header.classList.remove('bg-white');
         header.classList.add('bg-transparent');
         headerTexts.forEach(el => el.classList.remove('text-slate-800', 'filled'));
         headerTexts.forEach(el => el.classList.add('text-white'));
-        headerButton.classList.remove('text-slate-400');
+        headerButton.classList.remove('text-emerald-600');
         headerButton.classList.add('text-white');
       }
     };
